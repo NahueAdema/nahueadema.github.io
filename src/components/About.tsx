@@ -117,7 +117,7 @@ const About: React.FC = () => {
               </div>
 
               <a
-                href="/cv.pdf"
+                href={cv}
                 download
                 className="inline-flex items-center px-6 py-3 rounded-full bg-primary-600 hover:bg-primary-700 text-white font-medium transition-colors"
               >
