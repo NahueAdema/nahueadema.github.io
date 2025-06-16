@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { FileText, Coffee, Github, Linkedin, Mail } from "lucide-react";
 import Profile from "../assets/profile.png";
+import cv from "../assets/cv.pdf";
 const About: React.FC = () => {
   return (
     <section
@@ -67,7 +68,7 @@ const About: React.FC = () => {
                   <Mail className="w-5 h-5 text-white" />
                 </a>
                 <a
-                  href="/cv.pdf"
+                  href={cv}
                   target="_blank"
                   className="p-3 bg-gray-800 hover:bg-gray-700 rounded-full transition-colors"
                 >
