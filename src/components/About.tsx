@@ -69,6 +69,7 @@ const About: React.FC = () => {
                 </a>
                 <a
                   href={cv}
+                  download="cv.pdf"
                   target="_blank"
                   className="p-3 bg-gray-800 hover:bg-gray-700 rounded-full transition-colors"
                 >
@@ -118,7 +119,7 @@ const About: React.FC = () => {
 
               <a
                 href={cv}
-                download
+                download="cv.pdf"
                 className="inline-flex items-center px-6 py-3 rounded-full bg-primary-600 hover:bg-primary-700 text-white font-medium transition-colors"
               >
                 <FileText className="w-5 h-5 mr-2" />
