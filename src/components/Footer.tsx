@@ -13,7 +13,7 @@ const Footer = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col md:flex-row justify-between items-center">
           <div className="mb-8 md:mb-0">
-            <a href="/" className="text-3xl font-bold gradient-text">
+            <a href="/portfolio/" className="text-3xl font-bold gradient-text">
               Nahu<span className="text-white">Portfolio</span>
             </a>
             <p className="text-gray-400 mt-2 max-w-md">
@@ -57,7 +57,7 @@ const Footer = () => {
         <div className="mt-12 pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center">
           <nav className="flex flex-wrap justify-center gap-x-8 gap-y-4 mb-6 md:mb-0">
             <a
-              href="/"
+              href="/portfolio/"
               className="text-gray-400 hover:text-white transition-colors"
             >
               Inicio

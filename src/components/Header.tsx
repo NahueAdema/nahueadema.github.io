@@ -14,14 +14,14 @@ const Header = () => {
     <header className="fixed w-full top-0 z-50 bg-dark/80 backdrop-blur-md">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-4">
-          <a href="/" className="text-2xl font-bold gradient-text">
+          <a href="/portfolio/" className="text-2xl font-bold gradient-text">
             Nahu<span className="text-white">Portfolio</span>
           </a>
 
           {/* Navegación para escritorio */}
           <nav className="hidden md:flex items-center space-x-8">
             <a
-              href="/"
+              href="/portfolio/"
               className="text-white hover:text-primary-400 transition-colors"
             >
               Inicio
@@ -96,7 +96,7 @@ const Header = () => {
 
         <nav className="flex flex-col items-center space-y-8 text-xl">
           <a
-            href="/"
+            href="/portfolio/"
             onClick={closeMenu}
             className="text-white hover:text-primary-400 transition-colors"
           >
