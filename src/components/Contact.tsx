@@ -33,7 +33,7 @@ const Contact = () => {
   });
 
   const handleChange = (
-    e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+    e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
   ) => {
     setFormState({
       ...formState,
@@ -41,7 +41,7 @@ const Contact = () => {
     });
   };
 
-  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setFormStatus({
       isSubmitting: true,
@@ -50,32 +50,42 @@ const Contact = () => {
       message: "",
     });
 
-    // Simulación de envío
-    setTimeout(() => {
-      setFormStatus({
-        isSubmitting: false,
-        isSubmitted: true,
-        isError: false,
-        message:
-          "¡Gracias por tu mensaje! Te responderé lo más pronto posible.",
+    try {
+      const response = await fetch("https://formspree.io/f/TU_ID_ACÁ", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formState),
       });
 
-      setFormState({
-        name: "",
-        email: "",
-        subject: "",
-        message: "",
-      });
-
-      setTimeout(() => {
+      if (response.ok) {
         setFormStatus({
           isSubmitting: false,
-          isSubmitted: false,
+          isSubmitted: true,
           isError: false,
-          message: "",
+          message:
+            "¡Gracias por tu mensaje! Te responderé lo más pronto posible.",
         });
-      }, 5000);
-    }, 1500);
+        setFormState({ name: "", email: "", subject: "", message: "" });
+
+        setTimeout(() => {
+          setFormStatus({
+            isSubmitting: false,
+            isSubmitted: false,
+            isError: false,
+            message: "",
+          });
+        }, 5000);
+      } else {
+        throw new Error("Error al enviar");
+      }
+    } catch {
+      setFormStatus({
+        isSubmitting: false,
+        isSubmitted: false,
+        isError: true,
+        message: "Hubo un error al enviar el mensaje. Intentá de nuevo.",
+      });
+    }
   };
   return (
     <section

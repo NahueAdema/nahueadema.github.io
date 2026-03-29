@@ -1,7 +1,10 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Github, ExternalLink, Code, Server, Database } from "lucide-react";
-
+import WebCritic from "../assets/webcritic.png";
+import BolivarYa from "../assets/bolivarya.png";
+import AiCvClassifier from "../assets/aicvclassifier.png";
+import DealOrNoDeal from "../assets/dealornodeal.png";
 type Project = {
   id: string;
   title: string;
@@ -10,11 +13,86 @@ type Project = {
   tags: string[];
   category: string;
   githubUrl: string;
-  demoUrl: string;
+  demoUrl?: string;
 };
 
 const projects: Project[] = [
-  // Tus proyectos aquí
+  {
+    id: "1",
+    title: "Web critic AI",
+    description:
+      "Web critic AI es un proyecto que utiliza el modelo Groq para generar críticas sobre la ui de un sitio web.",
+    image: WebCritic,
+    tags: ["nextjs", "web", "ui", "critic", "ai", "groq"],
+    category: "frontend",
+    githubUrl: "https://github.com/NahueAdema/AI-Website-Critic",
+    demoUrl: "https://ai-website-critic.vercel.app/",
+  },
+  {
+    id: "2",
+    title: "BolivarYa",
+    description:
+      "Un proyecto grupal el cual es una plataforma de delivery que conecta a usuarios con restaurantes, supermercados, farmacias y tiendas, permitiéndoles pedir productos desde la web o el celular y recibirlos a domicilio de forma rápida y sencilla.",
+    image: BolivarYa,
+    tags: ["laravel", "react", "web", "ui", "delivery", "ecommerce", "roles"],
+    category: "fullstack",
+    githubUrl: "https://github.com/fran5570/Bolivar-Ya",
+  },
+  {
+    id: "3",
+    title: "AiCvClassifier",
+    description:
+      "Un proyecto el cual utiliza inteligencia artificial para clasificar y analizar currículums vitae, ayudando a los reclutadores a identificar rápidamente a los candidatos más adecuados para sus vacantes. Esta inspirado en devs y desarrolladores.",
+    image: AiCvClassifier,
+    tags: [
+      "python",
+      "tensorFlow",
+      "fastAPI ",
+      "backend",
+      "ai",
+      "analizar",
+      "cvs",
+    ],
+    category: "backend",
+    githubUrl: "https://github.com/NahueAdema/AiCvClassifier",
+  },
+  {
+    id: "4",
+    title: "AiCvClassifier",
+    description:
+      "El frontend sencillo para utilizar el proyecto el cual utiliza inteligencia artificial para clasificar y analizar currículums vitae, ayudando a los reclutadores a identificar rápidamente a los candidatos más adecuados para sus vacantes. Esta inspirado en devs y desarrolladores.",
+    image: AiCvClassifier,
+    tags: [
+      "python",
+      "tensorFlow",
+      "fastAPI ",
+      "backend",
+      "ai",
+      "analizar",
+      "cvs",
+    ],
+    category: "frontend",
+    githubUrl: "https://github.com/NahueAdema/AiCvClassifierFE",
+  },
+  {
+    id: "5",
+    title: "Deal or No Deal",
+    description:
+      "Un proyecto el cual es una aplicación web que simula el popular juego de televisión 'Deal or No Deal', donde los jugadores eligen entre varias cajas con premios ocultos y negocian con un banquero para maximizar sus ganancias.",
+    image: DealOrNoDeal,
+    tags: [
+      "python",
+      "flask",
+      "ui",
+      "juego",
+      "deal or no deal",
+      "backend",
+      "frontend",
+    ],
+    category: "fullstack",
+    githubUrl: "https://github.com/NahueAdema/AI-Website-Critic",
+    demoUrl: "https://deal-or-no-deal2.onrender.com/",
+  },
 ];
 
 type Category = {
@@ -109,7 +187,7 @@ const Projects = () => {
                         target.onerror = null;
                         target.src = `https://via.placeholder.com/600x340.png?text=${project.title.replace(
                           /\s+/g,
-                          "+"
+                          "+",
                         )}`;
                       }}
                     />
@@ -159,13 +237,6 @@ const Projects = () => {
                           <ExternalLink className="w-5 h-5 text-white" />
                         </a>
                       </div>
-
-                      <a
-                        href={`/projects/${project.id}`}
-                        className="text-primary-400 hover:text-primary-300 font-medium text-sm transition-colors"
-                      >
-                        Ver detalles
-                      </a>
                     </div>
                   </div>
                 </motion.div>
