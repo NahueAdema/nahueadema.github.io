@@ -4,6 +4,7 @@ import WebCriticImg from "../assets/webcritic.png";
 import BolivarYaImg from "../assets/bolivarya.png";
 import AiCvImg from "../assets/aicvclassifier.png";
 import DealOrNoDealImg from "../assets/dealornodeal.png";
+import PortfolioV1Img from "../assets/portfoliov1.png";
 
 export const projects: Project[] = [
   {
@@ -137,5 +138,32 @@ export const projects: Project[] = [
     },
     githubUrl: "https://github.com/NahueAdema/Deal-Or-No-Deal",
     demoUrl: "https://deal-or-no-deal2.onrender.com/",
+  },
+  {
+    id: "portfolio-v1",
+    file: "portfoliov1.md",
+    title: "Portfolio V1",
+    description: {
+      es: "Mi portfolio anterior, construido con React y Tailwind. Fue la primera version de mi sitio personal: presentacion de proyectos, sobre mi y contacto. Lo mantengo como referencia de mi evolucion y como base del diseno actual.",
+      en: "My previous portfolio, built with React and Tailwind. It was the first version of my personal site: project showcase, about me and contact. I keep it as a reference of my evolution and as the base for the current design.",
+    },
+    image: PortfolioV1Img,
+    tags: ["react", "tailwind", "portfolio", "frontend"],
+    category: "frontend",
+    role: { es: "Frontend", en: "Frontend" },
+    highlight: {
+      es: "Primera version de mi portfolio personal con React y Tailwind.",
+      en: "First version of my personal portfolio with React and Tailwind.",
+    },
+    problem: {
+      es: "Necesitaba un primer sitio personal para mostrar mis proyectos y mi perfil.",
+      en: "Needed a first personal site to showcase my projects and profile.",
+    },
+    solution: {
+      es: "Portfolio estatico con React y Tailwind, desplegado en Cloudflare Workers.",
+      en: "Static portfolio with React and Tailwind, deployed on Cloudflare Workers.",
+    },
+    githubUrl: "https://github.com/NahueAdema/Portfoliov1",
+    demoUrl: "https://portfoliov1.ademanahuel.workers.dev/",
   },
 ];
